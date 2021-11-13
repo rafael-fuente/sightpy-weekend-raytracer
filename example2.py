@@ -33,14 +33,14 @@ scene.add(Sphere(vec3(160, 165/2, +65+185/2), 165/2, Refractive(1.5)))
 
 scene.add_Camera(lookfrom = point3(278, 278, -800),
 				  lookat = point3(278,278,0),
-				  screen_width = 600, 
-				  screen_height = 600,
+				  screen_width = 250, 
+				  screen_height = 250,
 				  field_of_view = 40,
 				  focal_distance  = 10.0,
 				  aperture  = 0.0)
 
 
-img = scene.render(samples_per_pixel = 3000, max_depth = 5)
+img = scene.render(samples_per_pixel = 300, max_depth = 5)
 
 img.save("example2.png")
 
