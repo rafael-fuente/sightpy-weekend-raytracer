@@ -100,7 +100,7 @@ void render_image(py::array_t<double>& r_arr, py::array_t<double>& g_arr, py::ar
            *g_ptr = (double *) g_arr.request().ptr,
            *b_ptr = (double *) b_arr.request().ptr;
 
-    
+
     const int image_height = (const int)r_arr.shape(0),  image_width = (const int)r_arr.shape(1);
     const int processor_count = std::thread::hardware_concurrency();
     const int number_of_threads = (processor_count > MAX_THREADS) ? MAX_THREADS : processor_count;

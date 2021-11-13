@@ -32,8 +32,8 @@ scene.add(Sphere(vec3(160, 165/2, +65+185/2), 165/2, Refractive(1.5)))
 
 scene.add_Camera(lookfrom = point3(278, 278, -800),
 				  lookat = point3(278,278,0),
-				  screen_width = 250, 
-				  screen_height = 250,
+				  screen_width = 200, 
+				  screen_height = 200,
 				  field_of_view = 40,
 				  focal_distance  = 10.0,
 				  aperture  = 0.0)

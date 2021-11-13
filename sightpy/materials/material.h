@@ -83,10 +83,7 @@ class Diffuse_light : public Material {
         Diffuse_light(shared_ptr<texture> a) : emit(a) {}
 
         virtual color get_color(const Ray& ray, const Scene_info& scene , const Hit_record& hit) const {
-            if (hit.orientation == UPDOWN)
             return emit->value(hit.u, hit.v, hit.position);
-            else
-                return  vec3(0., 0., 0.);
         }
 
     public:
