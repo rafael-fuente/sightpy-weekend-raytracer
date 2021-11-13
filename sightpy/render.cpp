@@ -118,7 +118,6 @@ void render_image(py::array_t<double>& r_arr, py::array_t<double>& g_arr, py::ar
         //std::cout << pixel_chuncks_height_finish[i]  <<"\n";
         int pixel_chunck_ptr_start =  image_width * (int) (round(((float)image_height)*  ( ((float)(i))  /  ((float)(number_of_threads)))));
         //std::cout << pixel_chuncks_ptr_start[i]  <<"\n";
-        //threads[0]  = std::thread(render_image ,pixel_chunck_height_start  , pixel_chunck_height_finish ,   r_ptr2 + pixel_chunck_ptr_start,g_ptr2 + pixel_chunck_ptr_start, b_ptr2 + pixel_chunck_ptr_start,  image_height ,  image_width ,  samples_per_pixel,  std::ref(world),  max_depth , std::ref(cam));
         threads[i]  = std::thread(render_pixel_chunck ,pixel_chunck_height_start  , pixel_chunck_height_finish ,   r_ptr + pixel_chunck_ptr_start,g_ptr + pixel_chunck_ptr_start, b_ptr + pixel_chunck_ptr_start,  
                                   image_height ,  image_width ,  samples_per_pixel, max_depth , std::ref(scene));
         

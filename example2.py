@@ -1,6 +1,5 @@
 import numpy as np
-from sightpy.scene import Scene
-from sightpy.render import *
+from sightpy import *
 
 point3 = vec3
 color = vec3

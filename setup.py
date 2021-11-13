@@ -33,10 +33,12 @@ ext_modules = [
 ]
 
 setup(
-    name='render',
+    name='sightpy',
     version=__version__,
     author='Rafael',
     ext_modules=ext_modules,
+    packages=['sightpy'],
+
     setup_requires=['pybind11>=2.5.0', 'numpy', 'Pillow'],
     zip_safe=False,
 )

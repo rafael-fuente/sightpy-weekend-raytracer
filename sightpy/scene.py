@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-from sightpy.render import *
+from .render import *
 import time
 
 point3 = vec3
