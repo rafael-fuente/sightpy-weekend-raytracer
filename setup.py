@@ -37,6 +37,6 @@ setup(
     version=__version__,
     author='Rafael',
     ext_modules=ext_modules,
-    setup_requires=['pybind11>=2.5.0'],
+    setup_requires=['pybind11>=2.5.0', 'numpy', 'Pillow'],
     zip_safe=False,
 )
