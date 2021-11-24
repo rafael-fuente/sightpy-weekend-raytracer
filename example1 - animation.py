@@ -42,7 +42,6 @@ def update_scene(scene, t):
 	w = (np.pi/20)/final_time
 
 
-	print( aperture)
 	scene.add_Camera(lookfrom = point3(14*np.sin(-w*t + phi0),3.3,14*np.cos(-w*t + phi0)),
 				  lookat = point3(0,0.3,0),
 				  screen_width = int(200*16/9), 
