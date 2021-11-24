@@ -1,5 +1,6 @@
 
 from sightpy import *
+from sightpy.animation import create_animation
 
 point3 = vec3
 color = vec3
@@ -27,18 +28,32 @@ scene.add(Sphere(point3(-3.5, 5, 2), 1.0, light), importance_sampled = True)
 
 
 
-scene.add_Camera(lookfrom = point3(13,3.3,4),
-			  lookat = point3(0,0.3,0),
-			  screen_width = int(300*16/9), 
-			  screen_height = 300,
-			  field_of_view = 20,
-			  focus_distance  = (point3(13,2,4)).length(),
-			  aperture  = 0.1)
+samples_per_pixel = 500
+max_depth = 4
+fps = 1 
+start_time = 0
+final_time = 5
+
+def update_scene(scene, t):
+	final_time = 5
+
+	aperture = 1.5 - 1.5/final_time*t
+	phi0 = 1.2722973952087173
+	w = (np.pi/20)/final_time
 
 
-img = scene.render(samples_per_pixel = 300, max_depth = 4)
+	print( aperture)
+	scene.add_Camera(lookfrom = point3(14*np.sin(-w*t + phi0),3.3,14*np.cos(-w*t + phi0)),
+				  lookat = point3(0,0.3,0),
+				  screen_width = int(200*16/9), 
+				  screen_height = 200,
+				  field_of_view = 20,
+				  focus_distance  = (point3(13,2,4)).length(),
+				  aperture  = aperture)
 
-img.save("example1.png")
 
-img.show()
+
+
+create_animation(scene,samples_per_pixel,max_depth, fps, start_time, final_time, update_scene, "example1_")
+
 

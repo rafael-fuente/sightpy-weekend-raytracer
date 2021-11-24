@@ -14,11 +14,11 @@ class Scene():
         self.collider_list = Hittable_list()
         self.importance_sampled_list = Hittable_list()
 
-    def add_Camera(self, lookfrom, lookat, screen_width, screen_height, field_of_view, focal_distance, aperture, vup= vec3(0.,1.,0.) ):
+    def add_Camera(self, lookfrom, lookat, screen_width, screen_height, field_of_view, focus_distance, aperture, vup= vec3(0.,1.,0.) ):
         self.screen_width = screen_width
         self.screen_height = screen_height
 
-        self.camera = Camera(lookfrom, lookat,field_of_view, screen_width/screen_height, aperture, focal_distance, vup)
+        self.camera = Camera(lookfrom, lookat,field_of_view, screen_width/screen_height, aperture, focus_distance, vup)
 
 
     def add(self,hittable, importance_sampled = False):

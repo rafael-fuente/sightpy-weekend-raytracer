@@ -35,11 +35,11 @@ scene.add_Camera(lookfrom = point3(278, 278, -800),
 				  screen_width = 200, 
 				  screen_height = 200,
 				  field_of_view = 40,
-				  focal_distance  = 10.0,
-				  aperture  = 0.0)
+				  focus_distance  = 10.0,
+				  aperture  = 0.01)
 
 
-img = scene.render(samples_per_pixel = 300, max_depth = 5)
+img = scene.render(samples_per_pixel = 500, max_depth = 5)
 
 img.save("example2.png")
 
